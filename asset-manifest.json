@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/cloth-store/static/css/main.31bff96e.chunk.css",
+    "main.js": "/cloth-store/static/js/main.e64f6b0a.chunk.js",
+    "main.js.map": "/cloth-store/static/js/main.e64f6b0a.chunk.js.map",
+    "runtime-main.js": "/cloth-store/static/js/runtime-main.0c51b380.js",
+    "runtime-main.js.map": "/cloth-store/static/js/runtime-main.0c51b380.js.map",
+    "static/js/2.6f5b8a87.chunk.js": "/cloth-store/static/js/2.6f5b8a87.chunk.js",
+    "static/js/2.6f5b8a87.chunk.js.map": "/cloth-store/static/js/2.6f5b8a87.chunk.js.map",
+    "static/js/3.e1294e65.chunk.js": "/cloth-store/static/js/3.e1294e65.chunk.js",
+    "static/js/3.e1294e65.chunk.js.map": "/cloth-store/static/js/3.e1294e65.chunk.js.map",
+    "index.html": "/cloth-store/index.html",
+    "static/css/main.31bff96e.chunk.css.map": "/cloth-store/static/css/main.31bff96e.chunk.css.map",
+    "static/js/2.6f5b8a87.chunk.js.LICENSE.txt": "/cloth-store/static/js/2.6f5b8a87.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0c51b380.js",
+    "static/js/2.6f5b8a87.chunk.js",
+    "static/css/main.31bff96e.chunk.css",
+    "static/js/main.e64f6b0a.chunk.js"
+  ]
+}
