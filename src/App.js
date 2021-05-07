@@ -1,11 +1,20 @@
 import './App.css';
+import {Route, Router, Switch} from 'react-router-dom';
 import HomePage from './pages/homepage/Homepage.component';
 
 
 function App() {
   return (
     <div className="App">
-      <HomePage/>
+      <Switch>
+        <Route exact path="/" component={HomePage}/>
+        <Route path="/hat" render={()=>(<div> <h1>Hats page</h1></div>)}/>
+        <Route  path={"/shop"} component={HomePage}> 
+          <Route path={'/shop/hats'} render={()=>(<div> <h1>Hats page</h1></div>)}/>
+          <Route path={'/shop/men'} render={()=>(<div> <h1>mens page</h1></div>)}/>
+        </Route>       
+      </Switch>
+      
     </div>
   );
 }

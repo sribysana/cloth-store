@@ -12,25 +12,29 @@ class Directory extends Component{
                     title:"HATS",
                     imageUrl:'https://i.ibb.co/cvpntL1/hats.png',
                     id:1,
-                    subtitle:'Shop now'
+                    subtitle:'Shop now',
+                    linkURL:'hats'
                 },
                 {
                     title:"jackets",
                     imageUrl:'https://i.ibb.co/px2tCc3/jackets.png',
                     id:2,
-                    subtitle:'Shop now'
+                    subtitle:'Shop now',
+                    linkURL:'jackets'
                 },
                 {
                     title:"Sneakers",
                     imageUrl:'https://i.ibb.co/0jqHpnp/sneakers.png',
                     id:3,
-                    subtitle:'Shop now'
+                    subtitle:'Shop now',
+                    linkURL:'sneakers'
                 },
                 {
                     title:"women",
                     imageUrl:'https://i.ibb.co/GCCdy8t/womens.png',
                     id:4,
                     subtitle:'Shop now',
+                    linkURL:'women',
                     size:'large'
                 },
                 {
@@ -38,6 +42,7 @@ class Directory extends Component{
                     imageUrl:'https://i.ibb.co/R70vBrQ/men.png',
                     id:5,
                     subtitle:'Shop now',
+                    linkURL:'men',
                     size:'large'
                 }
 
