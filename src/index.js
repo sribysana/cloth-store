@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from 'react-router-dom';
 import {Provider} from 'react-redux';
+import  store from './redux/store'
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;1,300&display=swap')
@@ -12,10 +13,12 @@ import {Provider} from 'react-redux';
 
 ReactDOM.render(
   <React.StrictMode>
-   
+    <Provider store={store}>
       <BrowserRouter>
         <App />
       </BrowserRouter>
+    </Provider>
+      
     
   </React.StrictMode>,
   document.getElementById('root')
