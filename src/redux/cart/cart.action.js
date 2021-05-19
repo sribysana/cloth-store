@@ -1,8 +1,8 @@
 import {cardActionTypes} from './cart.Types'
 
 
-export const addToCart = newItem =>({
-    type:cardActionTypes.ADD_TO_CART,
+export const addItem = newItem =>({
+    type:cardActionTypes.ADD_ITEM,
     payload:newItem
 })
 
