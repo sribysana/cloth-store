@@ -1,4 +1,6 @@
 export const cardActionTypes={
     ADD_ITEM:'ADD_ITEM',
+    REMOVE_ITEM:'REMOVE_ITEM',
     TOGGLE_CART_HIDDEN:'TOGGLE_CART_HIDDEN',
+    CLEAR_ITEM:'CLEAR_ITEM',
 }

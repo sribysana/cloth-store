@@ -6,6 +6,16 @@ export const addItem = newItem =>({
     payload:newItem
 })
 
-export const toggleCart =  ()=> ({
+export const toggleCart = () => ({
     type: cardActionTypes.TOGGLE_CART_HIDDEN,    
+})
+
+export const clearItem = id =>({
+    type:cardActionTypes.CLEAR_ITEM,
+    payload:{id},
+})
+
+export const removeItem = id => ({
+    type:cardActionTypes.REMOVE_ITEM,
+    payload:{id}
 })
