@@ -16,7 +16,9 @@ const CollectionItem = ({items, addItem})=>{
         <CustomButton onClick={()=>addItem(items)}>Add TO CART</CustomButton>
     </div>)}
 
-const mapDispatchToProps = dispatch =>({
+const mapDispatchToProps = dispatch =>{
+    console.log('mapDispatchToProps ??????','CollectionItem')
+    return{
     addItem: (item) => dispatch(addItem(item))
-});
+}};
 export default connect(null, mapDispatchToProps )(CollectionItem);
