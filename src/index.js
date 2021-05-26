@@ -1,21 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {BrowserRouter} from 'react-router-dom';
+import {Provider} from 'react-redux';
+import {persistGate} from 'redux-persist';
+
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter} from 'react-router-dom';
-import {Provider} from 'react-redux';
-import  store from './redux/store'
+import  s from './redux/store';
+
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;1,300&display=swap')
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;1,300&display=swap')
 </style>
 
+const {store, persistor}=s;
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        <App />
+        <persistGate persistor={persistor}>
+          <App />
+        </persistGate>
       </BrowserRouter>
     </Provider>
       
