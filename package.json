@@ -2,7 +2,7 @@
   "name": "clothing-shop",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://sribysana.github.io/cloth-store/",
+  "homepage": "https://cloth-store-prod.herokuapp.com",
   "dependencies": {
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.6",
@@ -52,3 +52,4 @@
     "gh-pages": "^3.1.0"
   }
 }
+//"homepage": "https://sribysana.github.io/cloth-store/",

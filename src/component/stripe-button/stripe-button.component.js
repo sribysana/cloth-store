@@ -19,7 +19,7 @@ const StripeCheckoutButton = ({price})=>{
                 billingAddress
                 email='sribysana@gmail.com'
                 image='https://sendeyo.com/en/f3eb2117da'
-                description={`Total is ₹ ${price}`}
+                description={`Total is ₹ ${price}` }
                 currency='INR'
                 amount={priceForstripe}
                 token={onToken}
