@@ -10,29 +10,31 @@ import {selectCartHidden} from '../../redux/cart/cart.selector';
 
 import {ReactComponent as Logo} from '../../assets/images/crown.svg';
 
-import './header.style.scss'
+import {HeaderContainer, LogoContainer, OptionsContainer, OptionLink, OptionDiv} from './header.style';
+
+//import './header.style.scss'
 
 const Header = ({userInfo, hidden})=>{
    
-    return (<div className="header">
-                <Link to="/" className="logo-container" >
+    return (<HeaderContainer>
+                <LogoContainer to="/" >
                     <Logo className="logo"/>
-                </Link>
-                <div className="options">
-                    <Link to="/shop" className="option">
+                </LogoContainer>
+                <OptionsContainer>
+                    <OptionLink to="/shop">
                         Shop
-                    </Link>
-                    <Link to="/shop" className="option">
+                    </OptionLink>
+                    <OptionLink to="/shop">
                         Contact
-                    </Link>
-                    {userInfo ? (<div onClick={()=>{console.log('>>>>>>>>>'); auth.signOut()}}> Sigout</div>) : (<Link to="/sigin" className="option">
+                    </OptionLink  >
+                    {userInfo ? (<OptionDiv onClick={()=>{console.log('>>>>>>>>>'); auth.signOut()}}> Sigout</OptionDiv>) : (<OptionLink to="/sigin">
                             Sigin
-                        </Link>)
+                        </OptionLink>)
                     }
                     <CartIcon/>
-                </div>
+                </OptionsContainer>
               {!hidden && <CartDropdown/>} 
-        </div>)
+        </HeaderContainer>)
 }
 
 //const mapStateToProps = ({user:{currentUser}, cart:{hidden}}) => {

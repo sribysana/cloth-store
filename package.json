@@ -2,7 +2,7 @@
   "name": "clothing-shop",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://cloth-store-prod.herokuapp.com",
+  "homepage": "https://cloth-store-prod.herokuapp.com/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.6",
@@ -20,6 +20,7 @@
     "redux-logger": "^3.0.6",
     "redux-persist": "^6.0.0",
     "reselect": "^4.0.0",
+    "styled-components": "^5.3.0",
     "web-vitals": "^1.1.2"
   },
   "scripts": {

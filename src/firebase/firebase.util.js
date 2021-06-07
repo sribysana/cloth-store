@@ -23,10 +23,10 @@ export const fireStore =  firebase.firestore();
 export const createUserProfile = async (userAuth, ...otherdata)=>{
   if(!userAuth)return
   
-  console.log(userAuth.uid)
+  console.log('userAuth>>>>>>', userAuth.uid)
   const userRef =fireStore.doc(`users/${userAuth.uid}`);
   const sanpshot = await userRef.get();
-  console.log('sanpshot', sanpshot)
+  console.log('sanpshot------', sanpshot)
 
 
   if(!sanpshot.exist){
