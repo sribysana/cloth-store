@@ -8,43 +8,44 @@ import HomePage from './pages/homepage/Homepage.component';
 import Shop from './pages/shop/shop.component';
 import Header from './component/header/header.component';
 import SigninAndSignup from './pages/sign-in-and-sign-upPage/sign-in-and-sign-up.component';
-import {setCurrentUser} from './redux/user/user.action'
+import {setCurrentUser} from './redux/user/user.action';
 import CheckoutPage from './pages/checkout/checkout.component';
 
-import {auth, createUserProfile} from './firebase/firebase.util'
+import {auth, createUserProfile, addCollectionAndDocuments} from './firebase/firebase.util';
 import './App.css';
 import { selectCurrentuser } from './redux/user/user.selecter';
+//import {selectCollectionForPreview} from './redux/shop/shop.selector';
 class App extends React.Component {
  
   unsubscriptFormAuth=null
   componentDidMount(){
-    const {setCurrentUser}= this.props;
+    const {setCurrentUser, collectionsArray}= this.props;
     this.unsubscriptFormAuth = auth.onAuthStateChanged( async userAuth =>{
 
         if(userAuth){
           
           const userRef = await createUserProfile(userAuth);
-
           userRef.onSnapshot((snapshot)=>{
             setCurrentUser({
                 id:snapshot.id,
                 ...snapshot.data()               
             })
-
               // this.setState({
               //   currentUser:{
               //     id:snapshot.id,
               //     ...snapshot.data()
               //   } 
               // })
-
-
            })
         }
         
-        setCurrentUser(userAuth)
+        setCurrentUser(userAuth);
         //this.setState({currentUser:userAuth})
+      //  alert('addCollectionAndDocuments')
+        //addCollectionAndDocuments('collections', collectionsArray.map(({title,items})=>({title,items})));
     })
+
+
   }
   
   componentWillUnmount(){
@@ -78,6 +79,7 @@ class App extends React.Component {
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentuser,
+ // collectionsArray: selectCollectionForPreview,
 });
 
 const mapDispatchToProps = dispatch =>({

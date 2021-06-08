@@ -32,7 +32,6 @@ export const createUserProfile = async (userAuth, ...otherdata)=>{
   if(!sanpshot.exist){
     const {email,displayName} = userAuth;
     const created= new Date();
-
     try{
       await userRef.set({
         displayName,
@@ -47,6 +46,36 @@ export const createUserProfile = async (userAuth, ...otherdata)=>{
   return userRef;
 }
 
+
+export const addCollectionAndDocuments = async(collectionKey, ObjToAdd)=>{
+  const collectionRef = fireStore.collection(collectionKey);
+  console.log('collectionRef >>>>', collectionRef);
+  const batch = fireStore.batch();
+  ObjToAdd.forEach((obj)=>{
+    const newDocRef =  collectionRef.doc();
+    batch.set(newDocRef, obj);
+  })
+  return await batch.commit();
+}
+
+
+export const convertCollectionSnapshotToMap = (collections)=>{
+  const transformedCollection= collections.docs.map(doc=>{
+    const  {title, items}= doc.data();
+    return {
+      id:doc.id,
+      title,
+      items,
+      routeName: encodeURI(title.toLocaleLowerCase())
+    }
+  })
+
+  return transformedCollection.reduce((acc, collection)=>{ 
+    //alert(`--------${JSON.stringify(acc)}`);
+    acc[collection.title.toLowerCase()]=collection;
+    return acc;
+  }, {});
+}
 
 const provider= new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ prompt: 'select_account'});
